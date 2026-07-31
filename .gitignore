@@ -1,0 +1,11 @@
+# build output (regenerated for deploy)
+dist/
+
+# backups / os / editor cruft
+*.bak
+.DS_Store
+.vercel/
+
+# large source originals kept locally, not needed to run the site
+assets/products-original/
+assets/logo-original.png
