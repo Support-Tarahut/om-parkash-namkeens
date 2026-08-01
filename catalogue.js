@@ -21,9 +21,9 @@ export const CATEGORIES = [
     "id": "traditional-crunchies",
     "name": "Traditional Crunchies",
     "order": 3,
-    "expectedCount": 9,
-    "count": 9,
-    "connected": 9
+    "expectedCount": 10,
+    "count": 10,
+    "connected": 10
   },
   {
     "id": "dal-peas-and-roasted-snacks",
@@ -790,6 +790,23 @@ export const PRODUCTS = [
     "category": "Sev & Bhujia",
     "imageFilename": "zeera-sev.webp",
     "image": "assets/products/zeera-sev.webp",
+    "imageConnected": true,
+    "price": null,
+    "packSizes": [],
+    "stockStatus": "pending-confirmation",
+    "featured": false,
+    "bestseller": false,
+    "ingredients": null,
+    "allergens": null,
+    "shelfLife": "Shelf-life details pending product-level confirmation"
+  },
+  {
+    "id": "masala-kaju",
+    "slug": "masala-kaju",
+    "name": "Masala Kaju",
+    "category": "Traditional Crunchies",
+    "imageFilename": "masala-kaju.webp",
+    "image": "assets/products/masala-kaju.webp",
     "imageConnected": true,
     "price": null,
     "packSizes": [],
