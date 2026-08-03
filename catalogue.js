@@ -61,8 +61,24 @@ export const PRODUCTS = [
     "image": "assets/products/aaloo-bhujia.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -78,8 +94,24 @@ export const PRODUCTS = [
     "image": "assets/products/ajwain-sev.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -95,8 +127,24 @@ export const PRODUCTS = [
     "image": "assets/products/bhalla.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -112,8 +160,24 @@ export const PRODUCTS = [
     "image": "assets/products/bhojpuri-mix.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -129,8 +193,24 @@ export const PRODUCTS = [
     "image": "assets/products/bikaneri-bhujia.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -146,8 +226,24 @@ export const PRODUCTS = [
     "image": "assets/products/bombay-mix.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -163,8 +259,24 @@ export const PRODUCTS = [
     "image": "assets/products/chameli-mix.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -180,8 +292,24 @@ export const PRODUCTS = [
     "image": "assets/products/chana-jor.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -197,8 +325,24 @@ export const PRODUCTS = [
     "image": "assets/products/disco-mix.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -214,8 +358,24 @@ export const PRODUCTS = [
     "image": "assets/products/fafda-mix.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -231,8 +391,24 @@ export const PRODUCTS = [
     "image": "assets/products/fafda.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -248,8 +424,24 @@ export const PRODUCTS = [
     "image": "assets/products/gathia-mix.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -265,8 +457,24 @@ export const PRODUCTS = [
     "image": "assets/products/gathia.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -282,8 +490,24 @@ export const PRODUCTS = [
     "image": "assets/products/green-moong-dal.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -299,8 +523,24 @@ export const PRODUCTS = [
     "image": "assets/products/green-pea.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -316,8 +556,24 @@ export const PRODUCTS = [
     "image": "assets/products/kaju.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -333,8 +589,24 @@ export const PRODUCTS = [
     "image": "assets/products/khatha-meetha-bhujia.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -350,8 +622,24 @@ export const PRODUCTS = [
     "image": "assets/products/kofta.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -367,8 +655,24 @@ export const PRODUCTS = [
     "image": "assets/products/laccha-mix.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -384,8 +688,24 @@ export const PRODUCTS = [
     "image": "assets/products/laccha.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -401,8 +721,24 @@ export const PRODUCTS = [
     "image": "assets/products/lasan-sev.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -418,8 +754,24 @@ export const PRODUCTS = [
     "image": "assets/products/light-mix.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -435,8 +787,24 @@ export const PRODUCTS = [
     "image": "assets/products/lite-mix.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -452,8 +820,24 @@ export const PRODUCTS = [
     "image": "assets/products/malai-bhujia.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -469,8 +853,24 @@ export const PRODUCTS = [
     "image": "assets/products/masala-channa.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -486,8 +886,24 @@ export const PRODUCTS = [
     "image": "assets/products/masala-chips.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -503,8 +919,24 @@ export const PRODUCTS = [
     "image": "assets/products/masala-pakooda.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -520,8 +952,24 @@ export const PRODUCTS = [
     "image": "assets/products/methi-sev.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -537,8 +985,24 @@ export const PRODUCTS = [
     "image": "assets/products/millet-mix.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -554,8 +1018,24 @@ export const PRODUCTS = [
     "image": "assets/products/moong-dal.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -571,8 +1051,24 @@ export const PRODUCTS = [
     "image": "assets/products/moong-jor.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -588,8 +1084,24 @@ export const PRODUCTS = [
     "image": "assets/products/mota-mix.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -605,8 +1117,24 @@ export const PRODUCTS = [
     "image": "assets/products/nav-rattan.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -622,8 +1150,24 @@ export const PRODUCTS = [
     "image": "assets/products/panch-rattan.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -639,8 +1183,24 @@ export const PRODUCTS = [
     "image": "assets/products/paneer-bhujia.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 100,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 200,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 400,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -656,8 +1216,24 @@ export const PRODUCTS = [
     "image": "assets/products/plain-boondi.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -673,8 +1249,24 @@ export const PRODUCTS = [
     "image": "assets/products/plain-pakooda.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -690,8 +1282,24 @@ export const PRODUCTS = [
     "image": "assets/products/pudina-boondi.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -707,8 +1315,24 @@ export const PRODUCTS = [
     "image": "assets/products/salted-chips.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 100,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 200,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 400,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -724,8 +1348,24 @@ export const PRODUCTS = [
     "image": "assets/products/sing-dana.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -741,8 +1381,24 @@ export const PRODUCTS = [
     "image": "assets/products/soyabean-mix.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -758,8 +1414,24 @@ export const PRODUCTS = [
     "image": "assets/products/tasty-crunchy-munchy.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -775,8 +1447,24 @@ export const PRODUCTS = [
     "image": "assets/products/tiranga.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -792,8 +1480,24 @@ export const PRODUCTS = [
     "image": "assets/products/zeera-sev.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
@@ -809,8 +1513,24 @@ export const PRODUCTS = [
     "image": "assets/products/masala-kaju.webp",
     "imageConnected": true,
     "price": null,
-    "packSizes": [],
-    "stockStatus": "pending-confirmation",
+    "packSizes": [
+      {
+        "label": "250 g",
+        "price": 70,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "500 g",
+        "price": 130,
+        "stockStatus": "in-stock"
+      },
+      {
+        "label": "1 kg",
+        "price": 250,
+        "stockStatus": "in-stock"
+      }
+    ],
+    "stockStatus": "in-stock",
     "featured": false,
     "bestseller": false,
     "ingredients": null,
