@@ -1083,6 +1083,7 @@ class Component extends DCLogic {
 
   componentDidMount(){
     this._loadCart();
+    if(typeof window!=='undefined'){ try{ this._applyHash(); window.addEventListener('hashchange', ()=>{ if(this._suppressHash){ this._suppressHash=false; return; } this._applyHash(); }); }catch(e){} }
     if(typeof document!=='undefined'){
       this._esc=(ev)=>{ if(ev.key==='Escape'){ if(this.state.cartOpen){ this._closeCart(); } else { this.setState({navOpen:false,phoneNavOpen:false}); } } };
       document.addEventListener('keydown',this._esc);
@@ -1138,10 +1139,22 @@ class Component extends DCLogic {
     if(h){ h.setAttribute('tabindex','-1'); h.focus(); }
   }
   allowedScreen(sc){ return ['home','shop','product','wholesale','story'].includes(sc) ? sc : 'home'; }
-  go(s){ this.setState({screen:this.allowedScreen(s), navOpen:false, phoneNavOpen:false}); if(typeof window!=='undefined') window.scrollTo({top:0}); }
-  openShop(cat){ this.setState({screen:'shop', shopCat:cat||'All Products', shopSearch:'', shopFilterOpen:false, navOpen:false, phoneNavOpen:false}); if(typeof window!=='undefined') window.scrollTo({top:0}); }
+  go(s){ const sc=this.allowedScreen(s); this.setState({screen:sc, navOpen:false, phoneNavOpen:false}); this._setHash(sc); if(typeof window!=='undefined') window.scrollTo({top:0}); }
+  openShop(cat){ this.setState({screen:'shop', shopCat:cat||'All Products', shopSearch:'', shopFilterOpen:false, navOpen:false, phoneNavOpen:false}); this._setHash('shop'); if(typeof window!=='undefined') window.scrollTo({top:0}); }
   openShopFocus(){ this.openShop('All Products'); if(typeof window!=='undefined') setTimeout(()=>{ const el=document.getElementById('opnShopSearch'); if(el) el.focus(); },90); }
-  openProduct(slug){ this.setState({screen:'product', slug, navOpen:false, phoneNavOpen:false}); if(typeof window!=='undefined') window.scrollTo({top:0}); }
+  openProduct(slug){ this.setState({screen:'product', slug, navOpen:false, phoneNavOpen:false}); this._setHash('product', slug); if(typeof window!=='undefined') window.scrollTo({top:0}); }
+  _hashFor(scr, slug){ if(scr==='shop') return '#/shop'; if(scr==='product'&&slug) return '#/product/'+slug; if(scr==='wholesale') return '#/wholesale'; if(scr==='story') return '#/our-story'; return '#/'; }
+  _setHash(scr, slug){ if(typeof window==='undefined'||!window.location) return; var h=this._hashFor(scr, slug); if(location.hash!==h){ this._suppressHash=true; try{ location.hash=h; }catch(e){} } }
+  _applyHash(){ if(typeof window==='undefined') return; try{
+      var parts=(location.hash||'').replace(/^#\/?/,'').split('/').filter(Boolean);
+      var prods=(window.__CATALOGUE&&window.__CATALOGUE.PRODUCTS)||[];
+      if(!parts.length){ this.setState({screen:'home'}); return; }
+      if(parts[0]==='shop'){ this.openShop('All Products'); return; }
+      if(parts[0]==='wholesale'){ this.go('wholesale'); return; }
+      if(parts[0]==='our-story'){ this.go('story'); return; }
+      if(parts[0]==='product'&&parts[1]){ var slug=decodeURIComponent(parts[1]); if(prods.some(function(p){return p.slug===slug;})){ this.openProduct(slug); } else { this.setState({screen:'home'}); this._setHash('home'); } return; }
+      this.setState({screen:'home'});
+    }catch(e){} }
   setSearch(e){ const v=e&&e.target?e.target.value:''; this.setState({shopSearch:v}); }
   setCat(c){ this.setState({shopCat:c, shopFilterOpen:false}); }
   clearFilters(){ this.setState({shopCat:'All Products', shopSearch:''}); }
