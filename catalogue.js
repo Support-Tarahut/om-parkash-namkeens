@@ -83,7 +83,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Fine, spiced potato-and-gram-flour sev with a light, everyday crunch."
   },
   {
     "id": "ajwain-sev",
@@ -116,7 +117,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Crisp gram-flour sev seasoned with fragrant ajwain (carom)."
   },
   {
     "id": "bhalla",
@@ -149,7 +151,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Traditional deep-fried lentil crunchies \u2014 savoury and crisp."
   },
   {
     "id": "bhojpuri-mix",
@@ -182,7 +185,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "A bold, spicy blend of sev, lentils and crunchy bits."
   },
   {
     "id": "bikaneri-bhujia",
@@ -215,7 +219,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Classic Bikaneri-style bhujia \u2014 thin, crisp and moreish."
   },
   {
     "id": "bombay-mix",
@@ -248,7 +253,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "The all-time favourite mix of sev, nuts and savoury crunchies."
   },
   {
     "id": "chameli-mix",
@@ -281,7 +287,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "A light, delicate house blend of sev and savouries."
   },
   {
     "id": "chana-jor",
@@ -314,7 +321,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Flattened, spiced roasted gram with a satisfying crunch."
   },
   {
     "id": "disco-mix",
@@ -347,7 +355,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "A lively party mix of assorted crunchy namkeen."
   },
   {
     "id": "fafda-mix",
@@ -380,7 +389,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Gujarati fafda pieces tossed through a savoury mix."
   },
   {
     "id": "fafda",
@@ -413,7 +423,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Crisp, Gujarati-style gram-flour fafda strips."
   },
   {
     "id": "gathia-mix",
@@ -446,7 +457,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Soft-crisp gathia in a moreish namkeen blend."
   },
   {
     "id": "gathia",
@@ -479,7 +491,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Thick, soft-crunch gram-flour gathia."
   },
   {
     "id": "green-moong-dal",
@@ -512,7 +525,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Crisp roasted green moong dal, lightly salted."
   },
   {
     "id": "green-pea",
@@ -545,7 +559,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Crunchy roasted green peas with a hint of spice."
   },
   {
     "id": "kaju",
@@ -578,7 +593,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "A rich, crunchy kaju-style namkeen \u2014 a house favourite."
   },
   {
     "id": "khatha-meetha-bhujia",
@@ -611,7 +627,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "The classic sweet, sour and spicy khatta-meetha mixture."
   },
   {
     "id": "kofta",
@@ -644,7 +661,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Round, savoury fried namkeen bites."
   },
   {
     "id": "laccha-mix",
@@ -677,7 +695,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Crisp laccha strands blended into a savoury mix."
   },
   {
     "id": "laccha",
@@ -710,7 +729,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Crisp, tangled strands of fried gram-flour laccha."
   },
   {
     "id": "lasan-sev",
@@ -743,7 +763,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Bold, garlic-flavoured crisp sev."
   },
   {
     "id": "light-mix",
@@ -776,7 +797,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "A lighter, mild everyday namkeen mix."
   },
   {
     "id": "lite-mix",
@@ -809,7 +831,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "A crisp, easy-going mix for everyday snacking."
   },
   {
     "id": "malai-bhujia",
@@ -842,7 +865,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Smooth, mild bhujia with a rich, creamy character."
   },
   {
     "id": "masala-channa",
@@ -875,7 +899,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Spiced roasted chana \u2014 protein-rich and moreish."
   },
   {
     "id": "masala-chips",
@@ -908,7 +933,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Crisp potato chips with a bold masala coating."
   },
   {
     "id": "masala-pakooda",
@@ -941,7 +967,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Spiced, crunchy gram-flour pakoda bites."
   },
   {
     "id": "methi-sev",
@@ -974,7 +1001,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Crisp sev with the gentle bitterness of fenugreek."
   },
   {
     "id": "millet-mix",
@@ -1007,7 +1035,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "A wholesome roasted millet-and-lentil mix."
   },
   {
     "id": "moong-dal",
@@ -1040,7 +1069,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Classic crisp fried moong dal, lightly salted."
   },
   {
     "id": "moong-jor",
@@ -1073,7 +1103,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Spiced, flattened moong with a crunchy bite."
   },
   {
     "id": "mota-mix",
@@ -1106,7 +1137,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "A hearty mix with bigger, crunchier pieces."
   },
   {
     "id": "nav-rattan",
@@ -1139,7 +1171,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "A nine-treasure blend of assorted premium namkeen."
   },
   {
     "id": "panch-rattan",
@@ -1172,7 +1205,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "A five-treasure mix of assorted savoury delights."
   },
   {
     "id": "paneer-bhujia",
@@ -1205,7 +1239,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Rich, savoury bhujia with a soft paneer-style flavour."
   },
   {
     "id": "plain-boondi",
@@ -1238,7 +1273,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Fine, crisp gram-flour boondi \u2014 lightly salted."
   },
   {
     "id": "plain-pakooda",
@@ -1271,7 +1307,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Lightly salted, crunchy gram-flour pakoda bites."
   },
   {
     "id": "pudina-boondi",
@@ -1304,7 +1341,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Crisp boondi with refreshing mint (pudina)."
   },
   {
     "id": "salted-chips",
@@ -1337,7 +1375,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Classic crisp, lightly salted potato chips."
   },
   {
     "id": "sing-dana",
@@ -1370,7 +1409,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Roasted, spiced peanuts \u2014 a timeless favourite."
   },
   {
     "id": "soyabean-mix",
@@ -1403,7 +1443,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "A crunchy, protein-rich roasted soya mix."
   },
   {
     "id": "tasty-crunchy-munchy",
@@ -1436,7 +1477,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "A fun, crunchy everyday munching mix."
   },
   {
     "id": "tiranga",
@@ -1469,7 +1511,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "A tricolour medley of assorted crunchy namkeen."
   },
   {
     "id": "zeera-sev",
@@ -1502,7 +1545,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Light, crisp sev seasoned with roasted cumin."
   },
   {
     "id": "masala-kaju",
@@ -1535,7 +1579,8 @@ export const PRODUCTS = [
     "bestseller": false,
     "ingredients": null,
     "allergens": null,
-    "shelfLife": "Shelf-life details pending product-level confirmation"
+    "shelfLife": "Approximately 3 months from packing.",
+    "shortDescription": "Spiced, crunchy kaju-style namkeen with a masala kick."
   }
 ];
 
