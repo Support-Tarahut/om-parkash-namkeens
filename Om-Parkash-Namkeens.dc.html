@@ -1431,7 +1431,7 @@ class Component extends DCLogic {
         if(label==='Shop'){ onClick=(e)=>{noop(e);this.setState({navOpen:false});this.openShop('All Products');}; active=s.screen==='shop'; }
         else if(label==='Wholesale'){ onClick=(e)=>{noop(e);this.setState({navOpen:false});this.go('wholesale');}; active=label==='Wholesale'&&s.screen==='wholesale'; }
         else if(label==='Our Story'){ onClick=(e)=>{noop(e);this.setState({navOpen:false});this.go('story');}; active=s.screen==='story'; }
-        else if(label==='Contact'){ onClick=(e)=>{noop(e);this.scrollFooter();}; }
+        else if(label==='Contact'){ onClick=(e)=>{noop(e);this.goSection('visit-delivery');}; active=false; }
         return { label, onClick, color:active?'#8E1D22':'#4A2C1E', underline:active?'#E4671E':'transparent' };
       }),
       exploreCards, categoryTiles,
