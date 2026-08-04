@@ -1102,7 +1102,7 @@ const DESIGN_PLACEHOLDER_PACK = { label:'XX g', priceLabel:'₹XX', price:null, 
 
 class Component extends DCLogic {
   state = { screen: PAGE_CONFIG.defaultScreen, navOpen:false, phoneNavOpen:false, faqOpen:0,
-    shopCat:'All Products', shopSearch:'', shopFilterOpen:false, slug:null,
+    shopCat:'All Products', shopSearch:'', shopFilterOpen:false, slug:null, contactActive:false,
     ws:{business:'',contact:'',city:'',products:'',qty:'',message:''}, wsErr:{},
     cat:{ loaded:false, PRODUCTS:[], CATEGORIES:[] },
     cartItems:[], cartOpen:false, checkoutStep:0,
@@ -1168,10 +1168,10 @@ class Component extends DCLogic {
     if(h){ h.setAttribute('tabindex','-1'); h.focus(); }
   }
   allowedScreen(sc){ return ['home','shop','product','wholesale','story'].includes(sc) ? sc : 'home'; }
-  go(s){ const sc=this.allowedScreen(s); this.setState({screen:sc, navOpen:false, phoneNavOpen:false}); this._setHash(sc); if(typeof window!=='undefined') window.scrollTo({top:0}); }
-  openShop(cat){ this.setState({screen:'shop', shopCat:cat||'All Products', shopSearch:'', shopFilterOpen:false, navOpen:false, phoneNavOpen:false}); this._setHash('shop'); if(typeof window!=='undefined') window.scrollTo({top:0}); }
+  go(s){ const sc=this.allowedScreen(s); this.setState({screen:sc, navOpen:false, phoneNavOpen:false, contactActive:false}); this._setHash(sc); if(typeof window!=='undefined') window.scrollTo({top:0}); }
+  openShop(cat){ this.setState({screen:'shop', shopCat:cat||'All Products', shopSearch:'', shopFilterOpen:false, navOpen:false, phoneNavOpen:false, contactActive:false}); this._setHash('shop'); if(typeof window!=='undefined') window.scrollTo({top:0}); }
   openShopFocus(){ this.openShop('All Products'); if(typeof window!=='undefined') setTimeout(()=>{ const el=document.getElementById('opnShopSearch'); if(el) el.focus(); },90); }
-  openProduct(slug){ this.setState({screen:'product', slug, navOpen:false, phoneNavOpen:false}); this._setHash('product', slug); if(typeof window!=='undefined') window.scrollTo({top:0}); }
+  openProduct(slug){ this.setState({screen:'product', slug, navOpen:false, phoneNavOpen:false, contactActive:false}); this._setHash('product', slug); if(typeof window!=='undefined') window.scrollTo({top:0}); }
   _hashFor(scr, slug){ if(scr==='shop') return '#/shop'; if(scr==='product'&&slug) return '#/product/'+slug; if(scr==='wholesale') return '#/wholesale'; if(scr==='story') return '#/our-story'; return '#/'; }
   _setHash(scr, slug){ if(typeof window==='undefined'||!window.location) return; var h=this._hashFor(scr, slug); if(location.hash!==h){ this._suppressHash=true; try{ location.hash=h; }catch(e){} } }
   _applyHash(){ if(typeof window==='undefined') return; try{
@@ -1208,7 +1208,7 @@ class Component extends DCLogic {
     const msg='Hello Om Parkash Namkeens,\n\nI would like to enquire about wholesale supply.\n\nBusiness / Shop:\n'+w.business+'\n\nContact Person:\n'+w.contact+'\n\nCity:\n'+w.city+'\n\nRequired Products:\n'+w.products+'\n\nEstimated Quantity:\n'+(String(w.qty||'').trim()||'Not specified')+'\n\nMessage:\n'+(String(w.message||'').trim()||'No additional message');
     if(!this._openExternal('https://wa.me/919356850599?text='+encodeURIComponent(msg))) this._flash('Could not open WhatsApp. Please message +91 93568 50599 directly.');
   }
-  goSection(id){ this.setState({screen:'home',navOpen:false}); if(typeof window!=='undefined'){ setTimeout(()=>{ const el=document.getElementById(id); if(el){ const y=el.getBoundingClientRect().top+(window.scrollY||window.pageYOffset||0)-72; window.scrollTo({top:y<0?0:y,behavior:'smooth'}); } },70); } }
+  goSection(id){ this.setState({screen:'home',navOpen:false,phoneNavOpen:false,contactActive:id==='visit-delivery'}); if(typeof window!=='undefined'){ setTimeout(()=>{ const el=document.getElementById(id); if(el){ const y=el.getBoundingClientRect().top+(window.scrollY||window.pageYOffset||0)-72; window.scrollTo({top:y<0?0:y,behavior:'smooth'}); } },70); } }
   scrollFooter(){ this.setState({navOpen:false,phoneNavOpen:false}); if(typeof window!=='undefined'){ setTimeout(()=>{ const el=document.querySelector('footer'); if(el){ const y=el.getBoundingClientRect().top+(window.scrollY||window.pageYOffset||0)-72; window.scrollTo({top:y<0?0:y,behavior:'smooth'}); } },40); } }
   openMaps(){ this._openExternal('https://www.google.com/maps/dir/?api=1&destination=30.5793708%2C74.8257008'); }
   waCatalogue(){ this._openExternal('https://wa.me/919356850599?text='+encodeURIComponent('Hello Om Parkash Namkeens, please share your wholesale product catalogue and current pricing.'),'_blank'); }
@@ -1431,7 +1431,7 @@ class Component extends DCLogic {
         if(label==='Shop'){ onClick=(e)=>{noop(e);this.setState({navOpen:false});this.openShop('All Products');}; active=s.screen==='shop'; }
         else if(label==='Wholesale'){ onClick=(e)=>{noop(e);this.setState({navOpen:false});this.go('wholesale');}; active=label==='Wholesale'&&s.screen==='wholesale'; }
         else if(label==='Our Story'){ onClick=(e)=>{noop(e);this.setState({navOpen:false});this.go('story');}; active=s.screen==='story'; }
-        else if(label==='Contact'){ onClick=(e)=>{noop(e);this.goSection('visit-delivery');}; active=false; }
+        else if(label==='Contact'){ onClick=(e)=>{noop(e);this.goSection('visit-delivery');}; active=s.screen==='home'&&s.contactActive; }
         return { label, onClick, color:active?'#8E1D22':'#4A2C1E', underline:active?'#E4671E':'transparent' };
       }),
       exploreCards, categoryTiles,
