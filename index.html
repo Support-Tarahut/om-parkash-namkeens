@@ -147,7 +147,10 @@ h1{max-width:100%;overflow-wrap:break-word}
 .opn-cta-secondary:focus-visible{outline:3px solid #F4A81D;outline-offset:3px;border-radius:8px}
 @container opn (max-width:440px){.opn-cta-primary{width:100%;justify-content:center}.opn-cta-row{width:100%}}
 /* Trust strip */
-.opn-trust-item{display:inline-flex;align-items:center;gap:9px;font:600 13px/1.2 'Manrope',sans-serif;color:#4A2C1E}
+.opn-trust-item{display:inline-flex;align-items:center;gap:9px;font:600 13px/1.2 'Manrope',sans-serif;color:#4A2C1E;white-space:nowrap}
+.opn-marquee-track{display:flex;align-items:center;width:max-content;animation:marquee 34s linear infinite}
+.opn-marquee:hover .opn-marquee-track{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){.opn-marquee-track{animation:none!important;flex-wrap:wrap;width:auto;justify-content:center}.opn-mq-dup{display:none}}
 select{font-family:inherit}
 @container opn (max-width:960px){.opn-founder-h{font-size:36px!important}}
 @container opn (max-width:600px){.opn-founder-h{font-size:31px!important}.opn-founder-media img{max-width:340px}}
@@ -329,13 +332,14 @@ img,svg{max-width:100%}
     </div>
   </section>
 
-  <!-- D. Trust strip -->
-  <section class="opn-reveal" style="background:#FBF6EC;border-top:1px solid #EFE4D0;border-bottom:1px solid #EFE4D0">
-    <div style="max-width:1240px;margin:0 auto;padding:16px 28px;display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:center;align-items:center">
+  <!-- D. Trust strip (continuous marquee) -->
+  <section class="opn-marquee" style="background:#FBF6EC;border-top:1px solid #EFE4D0;border-bottom:1px solid #EFE4D0;overflow:hidden">
+    <div class="opn-marquee-track" style="padding:15px 0">
       <sc-for list="{{ trust }}" as="t" hint-placeholder-count="7">
-        <div class="opn-trust-item">
-          <span style="width:26px;height:26px;border-radius:50%;background:#FBEBD0;color:#C0501A;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">{{ t.icon }}</span>{{ t.label }}
-        </div>
+        <div class="opn-trust-item" style="margin:0 18px;flex-shrink:0"><span style="width:26px;height:26px;border-radius:50%;background:#FBEBD0;color:#C0501A;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">{{ t.icon }}</span>{{ t.label }}</div>
+      </sc-for>
+      <sc-for list="{{ trust }}" as="t" hint-placeholder-count="7">
+        <div class="opn-trust-item opn-mq-dup" aria-hidden="true" style="margin:0 18px;flex-shrink:0"><span style="width:26px;height:26px;border-radius:50%;background:#FBEBD0;color:#C0501A;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">{{ t.icon }}</span>{{ t.label }}</div>
       </sc-for>
     </div>
   </section>
