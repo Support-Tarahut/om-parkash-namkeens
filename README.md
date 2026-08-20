@@ -27,7 +27,7 @@ python3 -m http.server 8777
 After editing `Om-Parkash-Namkeens.dc.html`, copy it to `index.html` so the served page matches.
 
 ## Supabase
-- Project: `epnuegvelnqkjggqitvg` (URL + **public anon** key are embedded in `index.html` — safe to expose).
+- Project: `fzisynpcrwkpcwlanwql` (URL + **public publishable** key are embedded in `index.html` — safe to expose).
 - To (re)create the database, run `supabase/schema.sql` in the Supabase SQL Editor.
 - Forms insert only; enquiry/order data is **not** publicly readable (owner reads it in the Supabase dashboard).
 
