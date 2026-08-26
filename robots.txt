@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://om-parkash-namkeens.vercel.app/sitemap.xml
+Sitemap: https://www.omparkashnamkeens.com/sitemap.xml
