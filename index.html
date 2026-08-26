@@ -52,6 +52,7 @@
 <title>Om Parkash Namkeens | Traditional Namkeen Manufacturer in Kotkapura, Punjab</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%238E1D22'/><text x='32' y='45' font-family='Georgia,serif' font-size='34' font-weight='700' text-anchor='middle' fill='%23F5E6C8'>OP</text></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%238E1D22'/><text x='32' y='45' font-family='Georgia,serif' font-size='34' font-weight='700' text-anchor='middle' fill='%23F5E6C8'>OP</text></svg>">
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <meta name="description" content="Om Parkash Namkeens is a family-run namkeen manufacturer in Kotkapura, Punjab, making sev, bhujia, boondi and signature mixtures since 1995. Retail, wholesale and bulk supply.">
 <link rel="canonical" href="https://omparkashnamkeens.com/">
 <meta property="og:type" content="website">
@@ -1064,8 +1065,12 @@ img,svg{max-width:100%}
     <p style="font:500 12.5px/1.5 'Manrope',sans-serif;color:#6B5540;margin:0 0 12px">Review your order. Tapping the button opens WhatsApp with this message ready to send to +91 93568 50599.</p>
     <pre style="white-space:pre-wrap;word-break:break-word;background:#FBF6EC;border:1px solid #EFE4D0;border-radius:12px;padding:16px;font:500 12px/1.6 'Manrope',sans-serif;color:#4A2C1E;margin:0">{{ orderPreview }}</pre>
     <sc-if value="{{ orderError }}" hint-placeholder-val="{{ false }}"><div style="margin-top:12px;background:#FCEBEA;border:1px solid #E9B7B4;border-radius:10px;padding:12px;font:600 12px/1.4 'Manrope',sans-serif;color:#A3302B">WhatsApp could not be opened automatically. Please message us directly at +91 93568 50599.</div></sc-if>
-    <sc-if value="{{ razorpayEnabled }}" hint-placeholder-val="{{ false }}"><button style="width:100%;margin-top:10px;padding:14px;border-radius:11px;border:none;background:#8E1D22;color:#fff;font:700 13.5px/1 'Manrope',sans-serif" disabled="true">Pay online (coming soon)</button></sc-if>
-    <div style="margin-top:14px;font:500 11.5px/1.5 'Manrope',sans-serif;color:#6B5540">Payment options confirmed after order review: UPI and Cash on Delivery where available. Online payment is not yet active.</div>
+    <sc-if value="{{ razorpayEnabled }}" hint-placeholder-val="{{ false }}">
+    <button onClick="{{ payOnline }}" style="width:100%;margin-top:12px;cursor:pointer;padding:15px;border-radius:11px;border:none;background:#0B6E4F;color:#fff;font:700 14px/1 'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg>Pay Online &mdash; {{ estTotalLabel }}</button>
+    <div style="margin-top:8px;text-align:center;font:500 11px/1.4 'Manrope',sans-serif;color:#8A6A34">Secure payment via Razorpay (UPI, cards, netbanking). Delivery charges settled separately on WhatsApp.</div>
+    <div style="margin-top:14px;display:flex;align-items:center;gap:10px"><span style="flex:1;height:1px;background:#EFE4D0"></span><span style="font:600 10.5px/1 'Manrope',sans-serif;color:#B49A78;letter-spacing:.08em">OR</span><span style="flex:1;height:1px;background:#EFE4D0"></span></div>
+    </sc-if>
+    <div style="margin-top:14px;font:500 11.5px/1.5 'Manrope',sans-serif;color:#6B5540">You can also send your order on WhatsApp and pay via UPI or Cash on Delivery. We never ask for card, CVV or banking passwords on this site.</div>
   </div>
   <div style="border-top:1px solid #EFE4D0;padding:16px 22px;flex-shrink:0;background:#FFFDF8;display:flex;gap:10px">
     <button onClick="{{ backToForm }}" style="flex:1;cursor:pointer;background:none;border:1.5px solid #E4C9A0;color:#8E1D22;border-radius:11px;padding:13px;font:700 13px/1 'Manrope',sans-serif">Back</button>
@@ -1076,14 +1081,29 @@ img,svg{max-width:100%}
   <sc-if value="{{ stepDone }}" hint-placeholder-val="{{ false }}">
   <div style="flex:1;overflow-y:auto;display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 26px">
     <div style="width:64px;height:64px;border-radius:999px;background:#EDF6EE;border:1px solid #BBD9BF;display:flex;align-items:center;justify-content:center;margin-bottom:18px"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2E6B42" stroke-width="2.4"><path d="M5 12l4.5 4.5L19 6"></path></svg></div>
+    <sc-if value="{{ paidOrder }}" hint-placeholder-val="{{ false }}">
+    <h3 style="font:600 24px/1.15 'Fraunces',serif;color:#2A2320;margin:0 0 10px">Payment successful</h3>
+    <p style="font:400 14px/1.6 'Manrope',sans-serif;color:#5B4636;margin:0 0 14px;max-width:330px">Thank you &mdash; your payment has been received. We&rsquo;ll pack your order and confirm delivery (and any delivery charge) with you on WhatsApp. Please keep your reference and payment ID.</p>
+    </sc-if>
+    <sc-if value="{{ notPaidOrder }}" hint-placeholder-val="{{ true }}">
     <h3 style="font:600 24px/1.15 'Fraunces',serif;color:#2A2320;margin:0 0 10px">Order request ready</h3>
     <p style="font:400 14px/1.6 'Manrope',sans-serif;color:#5B4636;margin:0 0 14px;max-width:320px">We&rsquo;ve opened WhatsApp with your order. <strong style="color:#2A2320">Please press Send</strong> to submit it to Om Parkash Namkeens &mdash; we&rsquo;ll confirm availability, delivery and the final total there.</p>
-    <div style="background:#FBF6EC;border:1px dashed #E0C9A0;border-radius:10px;padding:9px 16px;margin-bottom:22px;font:600 13px/1.3 'Manrope',sans-serif;color:#8E1D22">Reference: {{ orderRef }}</div>
+    </sc-if>
+    <div style="background:#FBF6EC;border:1px dashed #E0C9A0;border-radius:10px;padding:9px 16px;margin-bottom:12px;font:600 13px/1.3 'Manrope',sans-serif;color:#8E1D22">Reference: {{ orderRef }}</div>
+    <sc-if value="{{ paidOrder }}" hint-placeholder-val="{{ false }}">
+    <div style="background:#EDF6EE;border:1px solid #BBD9BF;border-radius:10px;padding:9px 16px;margin-bottom:22px;font:600 12px/1.3 'Manrope',sans-serif;color:#2E6B42">Payment ID: {{ paidPaymentId }}</div>
+    <div style="display:flex;flex-direction:column;gap:9px;width:100%;max-width:300px">
+      <a href="https://wa.me/919356850599" style="text-align:center;background:#128C4A;color:#fff;border-radius:11px;padding:13px;font:700 13.5px/1 'Manrope',sans-serif;text-decoration:none">Message us on WhatsApp</a>
+      <a href="tel:+919356850599" style="text-align:center;background:#FFFDF8;border:1.5px solid #E4C9A0;color:#8E1D22;border-radius:11px;padding:12px;font:700 13px/1 'Manrope',sans-serif;text-decoration:none">Call the shop</a>
+    </div>
+    </sc-if>
+    <sc-if value="{{ notPaidOrder }}" hint-placeholder-val="{{ true }}">
     <div style="display:flex;flex-direction:column;gap:9px;width:100%;max-width:300px">
       <button onClick="{{ reopenWhatsApp }}" style="cursor:pointer;background:#128C4A;color:#fff;border:none;border-radius:11px;padding:13px;font:700 13.5px/1 'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"></path></svg>Open WhatsApp again</button>
       <button onClick="{{ copyOrderMsg }}" style="cursor:pointer;background:#FFFDF8;border:1.5px solid #E4C9A0;color:#8E1D22;border-radius:11px;padding:12px;font:700 13px/1 'Manrope',sans-serif">Copy order message</button>
       <a href="tel:+919356850599" style="text-align:center;background:#FFFDF8;border:1.5px solid #E4C9A0;color:#8E1D22;border-radius:11px;padding:12px;font:700 13px/1 'Manrope',sans-serif;text-decoration:none">Call the shop</a>
     </div>
+    </sc-if>
     <button onClick="{{ finishOrder }}" style="cursor:pointer;background:none;border:none;color:#6B5540;margin-top:20px;padding:8px;font:600 13px/1 'Manrope',sans-serif;text-decoration:underline">Done &amp; clear cart</button>
   </div>
   </sc-if>
@@ -1117,7 +1137,7 @@ const BRAND_IS_100_PERCENT_VEGETARIAN = true;
 // placeholder automatically. To go live: enter real packSizes/prices in catalogue.js and set
 // DESIGN_MODE = false — no redesign required. Never present placeholders as final prices.
 const DESIGN_MODE = false;
-const RAZORPAY_ENABLED = false; // stays false until real credentials + business approval; no API keys in frontend
+const RAZORPAY_ENABLED = true; // Pay Online via Razorpay (order+verify via /api serverless fns; secret stays server-side)
 const DESIGN_PLACEHOLDER_PACK = { label:'XX g', priceLabel:'₹XX', price:null, stockStatus:'in-stock', isPlaceholder:true };
 
 // ===== PRODUCT-IMAGE PRESENTATION =====
@@ -1130,7 +1150,7 @@ class Component extends DCLogic {
     shopCat:'All Products', shopSearch:'', shopFilterOpen:false, slug:null, contactActive:false,
     ws:{business:'',contact:'',city:'',products:'',qty:'',message:''}, wsErr:{},
     cat:{ loaded:false, PRODUCTS:[], CATEGORIES:[] },
-    cartItems:[], cartOpen:false, checkoutStep:0, pastOrders:[],
+    cartItems:[], cartOpen:false, checkoutStep:0, pastOrders:[], paid:false, paidPaymentId:null, payBusy:false,
     cardPack:{}, cardQty:{},
     co:{ name:'', mobile:'', city:'', addr:'', pay:'UPI', note:'' }, coErr:{}, orderError:false,
     toast:null };
@@ -1256,7 +1276,7 @@ class Component extends DCLogic {
   _loadCart(){ try{ if(!this._storageOK()) return; const raw=window.localStorage.getItem('om-cart'); if(raw){ const arr=JSON.parse(raw); if(Array.isArray(arr)) this.setState({cartItems:arr}); } }catch(e){ this._flash('Could not restore your saved cart.'); } }
   _saveCart(items){ try{ if(this._storageOK()) window.localStorage.setItem('om-cart', JSON.stringify(items)); }catch(e){ this._flash('Cart could not be saved on this device.'); } }
   _flash(msg){ this.setState({toast:msg}); if(this._tt) clearTimeout(this._tt); this._tt=setTimeout(()=>this.setState({toast:null}),2200); }
-  _openCart(){ if(typeof document!=='undefined') this._cartTrigger=document.activeElement; this.setState({cartOpen:true, checkoutStep:0}); this.track('begin_checkout'); this._lockScroll(); }
+  _openCart(){ if(typeof document!=='undefined') this._cartTrigger=document.activeElement; this.setState({cartOpen:true, checkoutStep:0, paid:false, paidPaymentId:null}); this.track('begin_checkout'); this._lockScroll(); }
   _closeCart(){ this.setState({cartOpen:false}); this._unlockScroll(); const t=this._cartTrigger; if(t&&t.focus){ try{ t.focus(); }catch(e){} } }
   addToCart(p, label, qty){
     const pack=this.packByLabel(p,label);
@@ -1336,14 +1356,59 @@ class Component extends DCLogic {
     m+='\n\nPlease confirm the final pack sizes, prices, availability and delivery charges.';
     return m;
   }
-  _saveOrderToDb(){
+  _saveOrderToDb(opts){
+    opts = opts || {};
     try{
       const c=this.state.co, items=this.state.cartItems, t=this.totals();
       const oid=(typeof crypto!=='undefined'&&crypto.randomUUID)?crypto.randomUUID():('o-'+Date.now()+'-'+Math.random().toString(16).slice(2));
       const total=(t&&t.label&&t.label!=='₹XX')?(Number(String(t.label).replace(/[^\d.]/g,''))||null):null;
-      this._dbInsert('orders', { id:oid, customer_name:c.name, customer_phone:String(c.mobile), customer_city:c.city, customer_address:c.addr, note:('Ref: '+(this.state.orderRef||'-')+(String(c.note||'').trim()?(' | '+String(c.note).trim()):'')), payment_method:(c.pay||'pending'), total:total, source:'website' })
+      this._dbInsert('orders', { id:oid, customer_name:c.name, customer_phone:String(c.mobile), customer_city:c.city, customer_address:c.addr, note:('Ref: '+(this.state.orderRef||'-')+(String(c.note||'').trim()?(' | '+String(c.note).trim()):'')), payment_method:(opts.paid?'razorpay':(c.pay||'pending')), payment_status:(opts.paid?'paid':'unpaid'), razorpay_order_id:(opts.razorpay_order_id||null), razorpay_payment_id:(opts.razorpay_payment_id||null), total:total, status:(opts.paid?'confirmed':'requested'), source:'website' })
         .then(ok=>{ if(ok && items.length){ const rows=items.map(i=>({ order_id:oid, product_slug:i.slug, product_name:i.name, pack_label:i.packLabel, qty:i.qty, unit_price:(typeof i.price==='number'?i.price:null), line_total:(typeof i.price==='number'?i.price*i.qty:null) })); this._dbInsert('order_items', rows); } });
     }catch(e){}
+  }
+  // ---------- Razorpay: Pay Online (order + verify via /api serverless fns) ----------
+  payOnline(){
+    const rupees=this.state.cartItems.reduce((a,i)=>a+(typeof i.price==='number'?i.price*i.qty:0),0);
+    const paise=Math.round(rupees*100);
+    if(!paise || paise<100){ this._flash('Online payment is unavailable for this order. Please use WhatsApp.'); return; }
+    if(typeof window==='undefined' || !window.Razorpay){ this._flash('Payment could not load. Please try WhatsApp or reload.'); return; }
+    if(this.state.payBusy) return;
+    const c=this.state.co, ref=(this.state.orderRef||this._makeOrderRef());
+    this.setState({payBusy:true, orderRef:ref});
+    fetch('/api/create-order',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({amount:paise, receipt:ref, name:c.name, phone:c.mobile})})
+      .then(r=>r.json().then(d=>({ok:r.ok,d:d})))
+      .then(res=>{
+        this.setState({payBusy:false});
+        const d=res.d||{};
+        if(!res.ok || !d.order_id){ this._flash(d.error||'Could not start online payment. Please try WhatsApp.'); return; }
+        const rzp=new window.Razorpay({
+          key:d.key_id, order_id:d.order_id, amount:d.amount, currency:d.currency||'INR',
+          name:'Om Parkash Namkeens', description:'Order '+ref,
+          prefill:{ name:(c.name||''), contact:String(c.mobile||'') },
+          notes:{ reference:ref },
+          theme:{ color:'#8E1D22' },
+          handler:(resp)=>{ this._verifyPayment(resp, ref); },
+          modal:{ ondismiss:()=>{ this._flash('Payment cancelled. Your cart is saved.'); } }
+        });
+        rzp.on('payment.failed', (resp)=>{ this._flash('Payment failed'+((resp&&resp.error&&resp.error.description)?(': '+resp.error.description):'.')); });
+        rzp.open();
+      })
+      .catch(()=>{ this.setState({payBusy:false}); this._flash('Could not reach the payment server. Please try WhatsApp.'); });
+  }
+  _verifyPayment(resp, ref){
+    fetch('/api/verify-payment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({razorpay_order_id:resp.razorpay_order_id, razorpay_payment_id:resp.razorpay_payment_id, razorpay_signature:resp.razorpay_signature})})
+      .then(r=>r.json().then(d=>({ok:r.ok,d:d})))
+      .then(res=>{
+        if(res.ok && res.d && res.d.verified){
+          this._saveOrderToDb({ paid:true, razorpay_order_id:resp.razorpay_order_id, razorpay_payment_id:resp.razorpay_payment_id });
+          this._saveOrderHistory();
+          this.track('payment_success',{ref:ref});
+          this.setState({ paid:true, paidPaymentId:resp.razorpay_payment_id, orderError:false, checkoutStep:3 });
+        } else {
+          this._flash('Payment could not be verified. If money was deducted, message us on WhatsApp with your payment ID.');
+        }
+      })
+      .catch(()=>{ this._flash('Could not verify payment. Please contact us on WhatsApp.'); });
   }
   placeOrder(){
     this._saveOrderToDb();
@@ -1458,7 +1523,8 @@ class Component extends DCLogic {
       submitWsForm:(e)=>{ if(e&&e.preventDefault) e.preventDefault(); this.submitWs(); },
       skipToContent:(e)=>this.skipToContent(e),
       placeOrder:()=>this.placeOrder(), orderError:s.orderError, orderPreview:this.buildOrderMsg(), orderRef:(s.orderRef||''),
-      finishOrder:()=>{ this.setState({cartItems:[], checkoutStep:0, orderRef:null}); this._saveCart([]); this._closeCart(); },
+      payOnline:()=>this.payOnline(), paidOrder:s.paid===true, notPaidOrder:s.paid!==true, paidPaymentId:(s.paidPaymentId||''),
+      finishOrder:()=>{ this.setState({cartItems:[], checkoutStep:0, orderRef:null, paid:false, paidPaymentId:null}); this._saveCart([]); this._closeCart(); },
       copyOrderMsg:()=>{ try{ if(typeof navigator!=='undefined' && navigator.clipboard){ navigator.clipboard.writeText(this.buildOrderMsg()); this._flash('Order message copied.'); } else { this._flash('Copy not supported here.'); } }catch(e){ this._flash('Could not copy.'); } },
       reopenWhatsApp:()=>{ try{ if(typeof window!=='undefined') window.open('https://wa.me/919356850599?text='+encodeURIComponent(this.buildOrderMsg()),'_blank','noopener'); }catch(e){} },
       coName:s.co.name, coMobile:s.co.mobile, coCity:s.co.city, coAddr:s.co.addr, coNote:s.co.note,

@@ -1,6 +1,10 @@
 # build output (regenerated for deploy)
 dist/
 
+# secrets / local env (real values live in Vercel env vars, never committed)
+.env
+.env.local
+
 # backups / os / editor cruft
 *.bak
 .DS_Store
