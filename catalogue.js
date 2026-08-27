@@ -55,7 +55,7 @@ export const PRODUCTS = [
   {
     "id": "aaloo-bhujia",
     "slug": "aaloo-bhujia",
-    "name": "Aloo Bhujia",
+    "name": "Aaloo Bhujia",
     "category": "Sev & Bhujia",
     "imageFilename": "aaloo-bhujia.webp",
     "image": "assets/products/aaloo-bhujia.webp",
