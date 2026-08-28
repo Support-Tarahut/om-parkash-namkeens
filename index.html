@@ -1673,7 +1673,7 @@ class Component extends DCLogic {
     if (typeof document==='undefined') return;
 
     try{ var f=document.createElement('link'); f.rel='stylesheet';
-      f.href='https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi:wght@500;600;700&display=swap';
+      f.href='https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@500;600;700&family=Noto+Serif+Gurmukhi:wght@500;600;700&display=swap';
       document.head.appendChild(f);
     }catch(e){}
 
@@ -1716,6 +1716,7 @@ class Component extends DCLogic {
       // sparks
       '#opn-inaug .opn-spark{position:absolute;z-index:2;border-radius:50%;background:radial-gradient(circle,#F7E3A8,#E9B84B);box-shadow:0 0 8px 2px rgba(244,200,66,.55);opacity:0;animation:opnDrift var(--sd) ease-in-out var(--sdl) infinite}',
       '#opn-inaug .opn-wrap{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;padding:0 20px}',
+      '#opn-inaug .opn-clogo{height:clamp(78px,15vw,132px);width:auto;margin-bottom:14px;filter:drop-shadow(0 8px 26px rgba(0,0,0,.55));opacity:0;animation:opnUp 1s .1s forwards}',
       '#opn-inaug .opn-eyebrow{font:600 12px/1.6 \'Manrope\',sans-serif;letter-spacing:.32em;text-transform:uppercase;color:#F4C842;opacity:0;animation:opnUp .9s .5s forwards}',
       '#opn-inaug .opn-eyebrow .g{font-family:'+GUR+';font-weight:600;letter-spacing:.05em}',
       '#opn-inaug h1{font:600 clamp(32px,7vw,70px)/1.03 \'Fraunces\',Georgia,serif;margin:12px 0 6px;color:#FBF6EC;text-shadow:0 2px 34px rgba(244,200,66,.3);opacity:0;animation:opnUp .9s .7s forwards}',
@@ -1807,8 +1808,9 @@ class Component extends DCLogic {
       '<div class="opn-vig"></div><div class="opn-flash"></div>'+
       '<button class="opn-skip" aria-label="Skip">Skip &times;</button>'+
       '<div class="opn-wrap">'+
+        '<img class="opn-clogo" src="assets/logo-transparent.webp" alt="Om Parkash Namkeens" width="900" height="486">'+
         '<div class="opn-eyebrow"><span class="g">ਸ਼ੁਭ ਆਰੰਭ</span> &nbsp;·&nbsp; Grand Launch</div>'+
-        '<h1>Om Parkash Namkeens</h1>'+
+        '<h1><span style="font-family:\'Noto Serif Devanagari\',\'Fraunces\',serif">ओम</span> Parkash Namkeens</h1>'+
         '<div class="opn-sub">Since 1995 &middot; Kotkapura, Punjab</div>'+
         '<div class="opn-stage">'+
           '<div class="opn-ribbon opn-rl"></div><div class="opn-ribbon opn-rr"></div>'+
