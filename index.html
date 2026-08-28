@@ -1943,7 +1943,7 @@ class Component extends DCLogic {
     // Celebration music (loaded only when the ceremony runs). Plays through the
     // ribbon-cutting celebration; fades out when the shutter finale begins.
     var opnMusic=null, opnMusicOn=false, opnMusicStopped=false, opnFadeIv=null;
-    try{ opnMusic=new Audio('assets/inauguration-music.mp3'); opnMusic.loop=false; opnMusic.preload='auto'; }catch(e){}
+    try{ opnMusic=new Audio('assets/inauguration-music.mp3'); opnMusic.loop=true; opnMusic.preload='auto'; }catch(e){}
     function startMusic(){
       if(opnMusicOn||opnMusicStopped||!opnMusic) return; opnMusicOn=true;
       try{ opnMusic.currentTime=0; opnMusic.volume=0; var p=opnMusic.play(); if(p&&p.catch)p.catch(function(){});
@@ -1959,8 +1959,7 @@ class Component extends DCLogic {
     root.addEventListener('pointerdown', startMusic, {once:true});
     function cut(){
       if (root.classList.contains('opn-cut')) return;
-      startMusic();                          // make sure the celebration music is playing
-      setTimeout(fadeMusic, 5000);           // it plays through the ribbon-cutting celebration, then fades out (won't run on)
+      startMusic();                          // celebration music keeps playing through the reveal…
       playSound();
       root.classList.add('opn-snip');
       setTimeout(function(){ root.classList.add('opn-cut'); fireworks(); },280);
