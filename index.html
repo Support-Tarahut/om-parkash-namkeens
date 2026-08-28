@@ -1942,17 +1942,19 @@ class Component extends DCLogic {
     }
     // Celebration music (loaded only when the ceremony runs). Plays through the
     // ribbon-cutting celebration; fades out when the shutter finale begins.
-    var opnMusic=null, opnMusicOn=false;
+    var opnMusic=null, opnMusicOn=false, opnMusicStopped=false, opnFadeIv=null;
     try{ opnMusic=new Audio('assets/inauguration-music.mp3'); opnMusic.loop=false; opnMusic.preload='auto'; }catch(e){}
     function startMusic(){
-      if(opnMusicOn||!opnMusic) return; opnMusicOn=true;
+      if(opnMusicOn||opnMusicStopped||!opnMusic) return; opnMusicOn=true;
       try{ opnMusic.currentTime=0; opnMusic.volume=0; var p=opnMusic.play(); if(p&&p.catch)p.catch(function(){});
-        var v=0, fi=setInterval(function(){ v+=0.05; if(v>=0.5){v=0.5;clearInterval(fi);} try{opnMusic.volume=v;}catch(e){} },55);
+        var v=0; opnFadeIv=setInterval(function(){ v+=0.05; if(v>=0.5){ v=0.5; clearInterval(opnFadeIv); opnFadeIv=null; } try{ if(!opnMusicStopped) opnMusic.volume=v; }catch(e){} },55);
       }catch(e){}
     }
     function fadeMusic(){
-      if(!opnMusic||!opnMusicOn) return;
-      try{ var v=opnMusic.volume, fo=setInterval(function(){ v-=0.06; if(v<=0){ v=0; try{opnMusic.pause();}catch(e){} clearInterval(fo); } try{opnMusic.volume=Math.max(0,v);}catch(e){} },55); }catch(e){}
+      if(!opnMusic) return;
+      opnMusicStopped=true;
+      if(opnFadeIv){ clearInterval(opnFadeIv); opnFadeIv=null; }   // cancel any fade-in first
+      try{ var v=opnMusic.volume||0.5, fo=setInterval(function(){ v-=0.08; if(v<=0){ v=0; try{opnMusic.pause();}catch(e){} clearInterval(fo); } try{opnMusic.volume=Math.max(0,v);}catch(e){} },50); }catch(e){}
     }
     root.addEventListener('pointerdown', startMusic, {once:true});
     function cut(){
