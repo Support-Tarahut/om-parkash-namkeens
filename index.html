@@ -1959,7 +1959,8 @@ class Component extends DCLogic {
     root.addEventListener('pointerdown', startMusic, {once:true});
     function cut(){
       if (root.classList.contains('opn-cut')) return;
-      fadeMusic();          // build-up music stops at the cut; applause takes over
+      startMusic();                          // make sure the celebration music is playing
+      setTimeout(fadeMusic, 5000);           // it plays through the ribbon-cutting celebration, then fades out (won't run on)
       playSound();
       root.classList.add('opn-snip');
       setTimeout(function(){ root.classList.add('opn-cut'); fireworks(); },280);
