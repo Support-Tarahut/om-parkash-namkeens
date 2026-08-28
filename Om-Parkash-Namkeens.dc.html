@@ -1786,11 +1786,14 @@ class Component extends DCLogic {
       '#opn-inaug.opn-closing{background:transparent}',
       '#opn-inaug.opn-closing .opn-bg,#opn-inaug.opn-closing .opn-vig,#opn-inaug.opn-closing .opn-wrap,#opn-inaug.opn-closing .opn-curt,#opn-inaug.opn-closing .opn-toran,#opn-inaug.opn-closing .opn-diya,#opn-inaug.opn-closing .opn-conf,#opn-inaug.opn-closing .opn-petal,#opn-inaug.opn-closing .opn-spark,#opn-inaug.opn-closing .opn-skip{opacity:0;transition:opacity .35s ease}',
       '#opn-inaug.opn-closing .opn-shutter{opacity:1;pointer-events:auto;transition:opacity .45s ease}',
-      '#opn-inaug.opn-rollup .opn-shutter{transform:translateY(-104%);transition:transform 2.9s cubic-bezier(.42,0,.12,1)}',
-      '#opn-inaug .opn-welcome{position:absolute;inset:0;z-index:31;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;opacity:0;pointer-events:none;padding:24px;background:radial-gradient(62% 46% at 50% 50%,rgba(20,11,7,.62),rgba(20,11,7,0) 76%)}',
+      '#opn-inaug.opn-rollup .opn-shutter{transform:translateY(-104%);transition:transform 4.8s cubic-bezier(.34,0,.16,1)}',
+      '#opn-inaug .opn-welcome{position:absolute;inset:0;z-index:31;display:flex;align-items:center;justify-content:center;text-align:center;opacity:0;pointer-events:none;padding:24px}',
+      '#opn-inaug .opn-welcome .wbox{display:flex;flex-direction:column;align-items:center;gap:12px;padding:30px clamp(26px,6vw,54px);border-radius:20px;',
+        'background:linear-gradient(160deg,rgba(58,29,22,.94),rgba(26,15,10,.96));border:1.5px solid rgba(244,200,66,.5);',
+        'box-shadow:0 26px 70px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,255,255,.05), 0 0 60px rgba(244,200,66,.12)}',
       '#opn-inaug .opn-welcome .wt{font:600 clamp(12px,2.6vw,16px)/1 \'Manrope\',sans-serif;letter-spacing:.32em;text-transform:uppercase;color:#F4C842}',
-      '#opn-inaug .opn-welcome .wn{font:600 clamp(28px,7vw,62px)/1.06 \'Fraunces\',Georgia,serif;color:#FBF6EC;text-shadow:0 3px 30px rgba(0,0,0,.65),0 0 44px rgba(244,200,66,.32)}',
-      '#opn-inaug .opn-welcome .wn .om{font-family:\'Noto Serif Devanagari\',\'Fraunces\',serif}',
+      '#opn-inaug .opn-welcome .wn{font:600 clamp(26px,6.4vw,56px)/1.08 \'Fraunces\',Georgia,serif;color:#FBF6EC}',
+      '#opn-inaug .opn-welcome .wn .om{font-family:\'Noto Serif Devanagari\',\'Fraunces\',serif;color:#F4C842}',
       '#opn-inaug.opn-welcomeon .opn-welcome{opacity:1;transition:opacity .9s ease}',
       '@media(prefers-reduced-motion:reduce){#opn-inaug .opn-scissors,#opn-inaug .opn-ribbon:after,#opn-inaug .opn-spark,#opn-inaug .opn-mari,#opn-inaug .opn-leaf,#opn-inaug .opn-flame,#opn-inaug .opn-hint{animation:none}#opn-inaug.opn-rollup .opn-shutter{transition:transform 1s ease}}'
     ].join('');
@@ -1820,7 +1823,7 @@ class Component extends DCLogic {
       '<div class="opn-diya r"><div class="flame"></div><div class="bowl"></div></div>'+
       '<div class="opn-vig"></div><div class="opn-flash"></div>'+
       '<div class="opn-shutter"><div class="opn-shbar"></div></div>'+
-      '<div class="opn-welcome"><div class="wt">Welcome to</div><div class="wn"><span class="om">ॐ</span> Parkash Namkeens</div></div>'+
+      '<div class="opn-welcome"><div class="wbox"><div class="wt">Welcome to</div><div class="wn"><span class="om">ॐ</span> Parkash Namkeens</div></div></div>'+
       '<button class="opn-skip" aria-label="Skip">Skip &times;</button>'+
       '<div class="opn-wrap">'+
         '<img class="opn-clogo" src="assets/logo-transparent.webp" alt="Om Parkash Namkeens" width="900" height="486">'+
@@ -1937,22 +1940,75 @@ class Component extends DCLogic {
         setTimeout(function(){ try{ctx.close();}catch(e){} }, 6500);
       }catch(e){}
     }
+    // Celebration music (loaded only when the ceremony runs). Plays through the
+    // ribbon-cutting celebration; fades out when the shutter finale begins.
+    var opnMusic=null, opnMusicOn=false;
+    try{ opnMusic=new Audio('assets/inauguration-music.mp3'); opnMusic.loop=true; opnMusic.preload='auto'; }catch(e){}
+    function startMusic(){
+      if(opnMusicOn||!opnMusic) return; opnMusicOn=true;
+      try{ opnMusic.currentTime=0; opnMusic.volume=0; var p=opnMusic.play(); if(p&&p.catch)p.catch(function(){});
+        var v=0, fi=setInterval(function(){ v+=0.05; if(v>=0.5){v=0.5;clearInterval(fi);} try{opnMusic.volume=v;}catch(e){} },55);
+      }catch(e){}
+    }
+    function fadeMusic(){
+      if(!opnMusic||!opnMusicOn) return;
+      try{ var v=opnMusic.volume, fo=setInterval(function(){ v-=0.06; if(v<=0){ v=0; try{opnMusic.pause();}catch(e){} clearInterval(fo); } try{opnMusic.volume=Math.max(0,v);}catch(e){} },55); }catch(e){}
+    }
+    root.addEventListener('pointerdown', startMusic, {once:true});
     function cut(){
       if (root.classList.contains('opn-cut')) return;
+      startMusic();
       playSound();
       root.classList.add('opn-snip');
       setTimeout(function(){ root.classList.add('opn-cut'); fireworks(); },280);
       try{ if(navigator.vibrate) navigator.vibrate([40,60,40]); }catch(e){}
     }
+    // Rolling-shutter sound (Web Audio): low mechanical rumble + metallic slat rattle + final clunk.
+    function playShutter(){
+      try{
+        var AC=window.AudioContext||window.webkitAudioContext; if(!AC) return;
+        var ctx=new AC(); if(ctx.state==='suspended'){ try{ctx.resume();}catch(e){} }
+        var now=ctx.currentTime, t0=now+0.65, dur=4.6;   // aligned to when the roll starts
+        var master=ctx.createGain(); master.gain.value=0.55; master.connect(ctx.destination);
+        function nb(d){ var n=Math.floor(ctx.sampleRate*d),b=ctx.createBuffer(1,n,ctx.sampleRate),c=b.getChannelData(0); for(var i=0;i<n;i++)c[i]=Math.random()*2-1; return b; }
+        // low mechanical rumble
+        var rum=ctx.createBufferSource(); rum.buffer=nb(dur+0.4);
+        var lp=ctx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=230;
+        var rg=ctx.createGain(); rg.gain.setValueAtTime(0.0001,t0);
+        rg.gain.exponentialRampToValueAtTime(0.5,t0+0.35);
+        rg.gain.setValueAtTime(0.5,t0+dur-0.7);
+        rg.gain.exponentialRampToValueAtTime(0.0001,t0+dur);
+        rum.connect(lp); lp.connect(rg); rg.connect(master); rum.start(t0); rum.stop(t0+dur+0.3);
+        // metallic slat rattle (periodic short bandpass clacks)
+        var t=t0+0.05;
+        while(t<t0+dur-0.35){
+          var src=ctx.createBufferSource(); src.buffer=nb(0.03);
+          var bp=ctx.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=2100+Math.random()*2000; bp.Q.value=7;
+          var g=ctx.createGain(); var amp=0.10+Math.random()*0.09;
+          g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(amp,t+0.003); g.gain.exponentialRampToValueAtTime(0.0001,t+0.025);
+          src.connect(bp); bp.connect(g); g.connect(master); src.start(t); src.stop(t+0.05);
+          t += 0.05*(0.7+Math.random()*0.7);
+        }
+        // final clunk as the shutter locks open
+        var ct=t0+dur-0.15;
+        var cs=ctx.createBufferSource(); cs.buffer=nb(0.14);
+        var clp=ctx.createBiquadFilter(); clp.type='lowpass'; clp.frequency.value=500;
+        var cg=ctx.createGain(); cg.gain.setValueAtTime(0.0001,ct); cg.gain.exponentialRampToValueAtTime(0.5,ct+0.006); cg.gain.exponentialRampToValueAtTime(0.0001,ct+0.16);
+        cs.connect(clp); clp.connect(cg); cg.connect(master); cs.start(ct); cs.stop(ct+0.2);
+        setTimeout(function(){ try{ctx.close();}catch(e){} }, (dur+1.5)*1000);
+      }catch(e){}
+    }
     function dismiss(){
       if(root.classList.contains('opn-closing')) return;
       try{ history.replaceState(null,'',location.pathname); }catch(e){}
+      fadeMusic();                                                           // celebration music ends here (limited to ribbon-cutting)
+      playShutter();                                                         // rolling-shutter sound (gesture-safe)
       // shop-shutter finale: shutter closes over the scene, then rolls up slowly to reveal the site
       root.classList.add('opn-closing');                                     // shutter fades in, scene fades out
-      setTimeout(function(){ root.classList.add('opn-rollup'); }, 700);      // shutter rolls up (slow-mo, 2.9s)
-      setTimeout(function(){ root.classList.add('opn-welcomeon'); }, 2500);  // "Welcome…" appears as the shop opens
-      setTimeout(function(){ root.classList.remove('opn-welcomeon'); }, 4900);
-      setTimeout(function(){ if(root&&root.parentNode) root.parentNode.removeChild(root); }, 5700);
+      setTimeout(function(){ root.classList.add('opn-rollup'); }, 700);      // shutter rolls up (slow-mo, 4.8s)
+      setTimeout(function(){ root.classList.add('opn-welcomeon'); }, 3900);  // "Welcome…" appears as the shop opens
+      setTimeout(function(){ root.classList.remove('opn-welcomeon'); }, 7000);
+      setTimeout(function(){ if(root&&root.parentNode) root.parentNode.removeChild(root); }, 7700);
     }
     root.querySelector('.opn-scissors').addEventListener('click',cut);
     root.querySelector('.opn-rose').addEventListener('click',cut);
