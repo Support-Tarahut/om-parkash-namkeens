@@ -1869,8 +1869,60 @@ class Component extends DCLogic {
       });
     }
 
+    // Celebration audio (Web Audio API — synthesized applause + cheer + festive fanfare).
+    // Triggered on the cut gesture, so it is allowed to play. Self-contained, no files.
+    function playSound(){
+      try{
+        var AC = window.AudioContext || window.webkitAudioContext; if(!AC) return;
+        var ctx = new AC(); if(ctx.state==='suspended'){ try{ctx.resume();}catch(e){} }
+        var now = ctx.currentTime;
+        var master = ctx.createGain(); master.gain.value=0.85; master.connect(ctx.destination);
+        function noiseBuf(dur){ var n=Math.floor(ctx.sampleRate*dur), b=ctx.createBuffer(1,n,ctx.sampleRate), d=b.getChannelData(0); for(var i=0;i<n;i++) d[i]=Math.random()*2-1; return b; }
+        // applause swell (many short filtered-noise claps)
+        var appG=ctx.createGain(); appG.connect(master);
+        appG.gain.setValueAtTime(0.0001, now);
+        appG.gain.exponentialRampToValueAtTime(0.55, now+0.28);
+        appG.gain.setValueAtTime(0.55, now+2.6);
+        appG.gain.exponentialRampToValueAtTime(0.0001, now+4.4);
+        for(var c=0;c<80;c++){
+          var t=now+Math.random()*3.3;
+          var src=ctx.createBufferSource(); src.buffer=noiseBuf(0.05);
+          var bp=ctx.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=1100+Math.random()*2600; bp.Q.value=0.9;
+          var g=ctx.createGain(); g.gain.setValueAtTime(0.0001,t);
+          g.gain.exponentialRampToValueAtTime(0.4+Math.random()*0.4, t+0.004);
+          g.gain.exponentialRampToValueAtTime(0.0001, t+0.045+Math.random()*0.04);
+          src.connect(bp); bp.connect(g); g.connect(appG); src.start(t); src.stop(t+0.12);
+        }
+        // crowd cheer bed
+        var cheer=ctx.createBufferSource(); cheer.buffer=noiseBuf(3.6);
+        var cbp=ctx.createBiquadFilter(); cbp.type='bandpass'; cbp.frequency.value=850; cbp.Q.value=0.5;
+        var cg=ctx.createGain(); cg.gain.setValueAtTime(0.0001, now);
+        cg.gain.exponentialRampToValueAtTime(0.16, now+0.4);
+        cg.gain.exponentialRampToValueAtTime(0.0001, now+3.3);
+        cheer.connect(cbp); cbp.connect(cg); cg.connect(master); cheer.start(now); cheer.stop(now+3.6);
+        // festive bell fanfare (rising major arpeggio + shimmer)
+        [523.25,659.25,783.99,1046.5].forEach(function(f,i){
+          var t=now+0.12+i*0.14;
+          var o=ctx.createOscillator(); o.type='triangle'; o.frequency.value=f;
+          var o2=ctx.createOscillator(); o2.type='sine'; o2.frequency.value=f*2.01;
+          var g=ctx.createGain(); g.gain.setValueAtTime(0.0001,t);
+          g.gain.exponentialRampToValueAtTime(0.32, t+0.02);
+          g.gain.exponentialRampToValueAtTime(0.0001, t+1.5);
+          var g2=ctx.createGain(); g2.gain.value=0.1; o2.connect(g2); g2.connect(g);
+          o.connect(g); g.connect(master); o.start(t); o.stop(t+1.6); o2.start(t); o2.stop(t+1.6);
+        });
+        [1046.5,1318.5,1568.0].forEach(function(f){
+          var t=now+0.85; var o=ctx.createOscillator(); o.type='sine'; o.frequency.value=f;
+          var g=ctx.createGain(); g.gain.setValueAtTime(0.0001,t);
+          g.gain.exponentialRampToValueAtTime(0.1, t+0.06); g.gain.exponentialRampToValueAtTime(0.0001, t+2.4);
+          o.connect(g); g.connect(master); o.start(t); o.stop(t+2.5);
+        });
+        setTimeout(function(){ try{ctx.close();}catch(e){} }, 6500);
+      }catch(e){}
+    }
     function cut(){
       if (root.classList.contains('opn-cut')) return;
+      playSound();
       root.classList.add('opn-snip');
       setTimeout(function(){ root.classList.add('opn-cut'); fireworks(); },280);
       try{ if(navigator.vibrate) navigator.vibrate([40,60,40]); }catch(e){}
