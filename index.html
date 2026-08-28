@@ -1779,7 +1779,20 @@ class Component extends DCLogic {
       '@keyframes opnCurtL{to{transform:translateX(-38%)}}',
       '@keyframes opnCurtR{to{transform:scaleX(-1) translateX(-38%)}}',
       '@keyframes opnPulse{0%{box-shadow:0 0 0 0 rgba(244,200,66,.5)}100%{box-shadow:0 0 0 26px rgba(244,200,66,0)}}',
-      '@media(prefers-reduced-motion:reduce){#opn-inaug .opn-scissors,#opn-inaug .opn-ribbon:after,#opn-inaug .opn-spark,#opn-inaug .opn-mari,#opn-inaug .opn-leaf,#opn-inaug .opn-flame,#opn-inaug .opn-hint{animation:none}}'
+      // --- shop shutter finale ---
+      '#opn-inaug .opn-shutter{position:absolute;inset:0;z-index:30;opacity:0;pointer-events:none;transform:translateY(0);transform-origin:top center;',
+        'background:linear-gradient(180deg,#45454c,#34343a 45%,#25252a 100%),repeating-linear-gradient(180deg,rgba(0,0,0,.36) 0 2px,rgba(255,255,255,.05) 2px 4px,rgba(0,0,0,0) 4px 17px,rgba(0,0,0,.36) 17px 19px);background-blend-mode:multiply;box-shadow:inset 0 -20px 34px rgba(0,0,0,.55)}',
+      '#opn-inaug .opn-shbar{position:absolute;left:0;right:0;bottom:0;height:16px;background:linear-gradient(180deg,#5c5c64,#28282d);box-shadow:0 8px 22px rgba(0,0,0,.6)}',
+      '#opn-inaug.opn-closing{background:transparent}',
+      '#opn-inaug.opn-closing .opn-bg,#opn-inaug.opn-closing .opn-vig,#opn-inaug.opn-closing .opn-wrap,#opn-inaug.opn-closing .opn-curt,#opn-inaug.opn-closing .opn-toran,#opn-inaug.opn-closing .opn-diya,#opn-inaug.opn-closing .opn-conf,#opn-inaug.opn-closing .opn-petal,#opn-inaug.opn-closing .opn-spark,#opn-inaug.opn-closing .opn-skip{opacity:0;transition:opacity .35s ease}',
+      '#opn-inaug.opn-closing .opn-shutter{opacity:1;pointer-events:auto;transition:opacity .45s ease}',
+      '#opn-inaug.opn-rollup .opn-shutter{transform:translateY(-104%);transition:transform 2.9s cubic-bezier(.42,0,.12,1)}',
+      '#opn-inaug .opn-welcome{position:absolute;inset:0;z-index:31;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;opacity:0;pointer-events:none;padding:24px;background:radial-gradient(62% 46% at 50% 50%,rgba(20,11,7,.62),rgba(20,11,7,0) 76%)}',
+      '#opn-inaug .opn-welcome .wt{font:600 clamp(12px,2.6vw,16px)/1 \'Manrope\',sans-serif;letter-spacing:.32em;text-transform:uppercase;color:#F4C842}',
+      '#opn-inaug .opn-welcome .wn{font:600 clamp(28px,7vw,62px)/1.06 \'Fraunces\',Georgia,serif;color:#FBF6EC;text-shadow:0 3px 30px rgba(0,0,0,.65),0 0 44px rgba(244,200,66,.32)}',
+      '#opn-inaug .opn-welcome .wn .om{font-family:\'Noto Serif Devanagari\',\'Fraunces\',serif}',
+      '#opn-inaug.opn-welcomeon .opn-welcome{opacity:1;transition:opacity .9s ease}',
+      '@media(prefers-reduced-motion:reduce){#opn-inaug .opn-scissors,#opn-inaug .opn-ribbon:after,#opn-inaug .opn-spark,#opn-inaug .opn-mari,#opn-inaug .opn-leaf,#opn-inaug .opn-flame,#opn-inaug .opn-hint{animation:none}#opn-inaug.opn-rollup .opn-shutter{transition:transform 1s ease}}'
     ].join('');
     document.head.appendChild(css);
 
@@ -1806,6 +1819,8 @@ class Component extends DCLogic {
       '<div class="opn-diya l"><div class="flame"></div><div class="bowl"></div></div>'+
       '<div class="opn-diya r"><div class="flame"></div><div class="bowl"></div></div>'+
       '<div class="opn-vig"></div><div class="opn-flash"></div>'+
+      '<div class="opn-shutter"><div class="opn-shbar"></div></div>'+
+      '<div class="opn-welcome"><div class="wt">Welcome to</div><div class="wn"><span class="om">ॐ</span> Parkash Namkeens</div></div>'+
       '<button class="opn-skip" aria-label="Skip">Skip &times;</button>'+
       '<div class="opn-wrap">'+
         '<img class="opn-clogo" src="assets/logo-transparent.webp" alt="Om Parkash Namkeens" width="900" height="486">'+
@@ -1930,9 +1945,14 @@ class Component extends DCLogic {
       try{ if(navigator.vibrate) navigator.vibrate([40,60,40]); }catch(e){}
     }
     function dismiss(){
-      root.classList.add('opn-lift');
-      setTimeout(function(){ if(root&&root.parentNode) root.parentNode.removeChild(root); },1000);
+      if(root.classList.contains('opn-closing')) return;
       try{ history.replaceState(null,'',location.pathname); }catch(e){}
+      // shop-shutter finale: shutter closes over the scene, then rolls up slowly to reveal the site
+      root.classList.add('opn-closing');                                     // shutter fades in, scene fades out
+      setTimeout(function(){ root.classList.add('opn-rollup'); }, 700);      // shutter rolls up (slow-mo, 2.9s)
+      setTimeout(function(){ root.classList.add('opn-welcomeon'); }, 2500);  // "Welcome…" appears as the shop opens
+      setTimeout(function(){ root.classList.remove('opn-welcomeon'); }, 4900);
+      setTimeout(function(){ if(root&&root.parentNode) root.parentNode.removeChild(root); }, 5700);
     }
     root.querySelector('.opn-scissors').addEventListener('click',cut);
     root.querySelector('.opn-rose').addEventListener('click',cut);
